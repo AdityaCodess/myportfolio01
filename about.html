@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="about.css">
+    <title>About Me</title>
+</head>
+
+<body>
+    <header class="navbar">
+        <nav>
+            <div class="logo">Aditya Bhalla</div>
+            <div class="menu-toggle" onclick="toggleNavbar()">&#9776;</div>
+            <ul class="nav-links">
+                <li><a onclick="window.location.href='index.html'" class="nav-btn">Home</a></li>
+                <li><a onclick="window.location.href='projects.html'" class="nav-btn">Projects</a></li>
+                <li><a onclick="window.location.href='contact.html'" class="nav-btn">Contact</a></li>
+            </ul>
+        </nav>
+    </header><br><br><br><br>
+
+    <main class="about">
+        <h1>About Me</h1>
+        <h2>Welcome to My Portfolio!</h2>
+        <p>Hello! I'm <strong>Aditya Bhalla</strong>, a developer from <strong>Chandigarh, India</strong>.</p>
+
+        <h2>Skills</h2>
+        <ul class="skills-list">
+            <li class="skill" data-skill="JavaScript">JavaScript</li>
+            <li class="skill" data-skill="HTML & CSS">HTML & CSS</li>
+            <li class="skill" data-skill="Python">Python</li>
+            <li class="skill" data-skill="React">React</li>
+            <li class="skill" data-skill="Node.js">Node.js</li>
+        </ul>
+
+        <h2>Projects</h2>
+        <p>I have worked on several exciting projects...</p>
+    </main>
+
+
+    <footer>
+        <p>&copy; 2024 My Portfolio</p>
+    </footer>
+
+    <!-- Load Three.js and dependencies -->
+    <script src="https://threejs.org/build/three.js"></script>
+    <script src="https://threejs.org/examples/js/loaders/GLTFLoader.js"></script>
+    <script src="https://threejs.org/examples/js/controls/OrbitControls.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+    <script src="about.js"></script> <!-- Your custom script should come after the dependencies -->
+
+    <script>
+        // JavaScript for Navbar Toggle
+        function toggleNavbar() {
+            const navbar = document.querySelector('.navbar');
+            navbar.classList.toggle('active');
+        }
+
+        // Smooth scrolling for navigation links
+        document.querySelectorAll('.nav-links a').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                document.querySelector(this.getAttribute('href')).scrollIntoView({
+                    behavior: 'smooth'
+                });
+            });
+        });
+    </script>
+</body>
+
+</html>

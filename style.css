@@ -54,6 +54,10 @@ body {
     transition: color 0.3s ease, box-shadow 0.3s ease;
 }
 
+.nav-btn{
+    cursor: pointer;
+}
+
 .menu-toggle {
     display: none;
     /* Hide the menu toggle button by default */

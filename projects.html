@@ -16,7 +16,7 @@
             <div class="logo">Aditya Bhalla</div>
             <div class="menu-toggle" onclick="toggleNavbar()">&#9776;</div> <!-- Hamburger icon -->
             <ul class="nav-links">
-                <li><a class="nav-btn">Home</a></li>
+                <li><a onclick="window.location.href='index.html'" class="nav-btn">Home</a></li>
 
                 <li><a onclick="window.location.href='about.html'" class="nav-btn">About</a></li>
                 
@@ -39,4 +39,12 @@
             <li class="project">Node.js</li>
         </ul>
     </body>
+
+    <script src="projects.js"></script>
+    <script>
+        function toggleNavbar(){
+            const navbar = document.querySelector('.navbar')
+            navbar.classList.toggle('active')
+        }
+    </script>
 </html>

@@ -1,0 +1,231 @@
+/* Reset and Basic Styling */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Orbitron', sans-serif;
+}
+
+body {
+    background-color: #0d0d0d;
+    color: #fff;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    min-height: 100vh;
+    overflow-x: hidden;
+}
+
+/* Navbar Styling */
+.navbar {
+    width: 100%;
+    padding: 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: fixed;
+    top: 0;
+    background: rgba(0, 0, 0, 0.8);
+    z-index: 10;
+}
+
+.nav-btn{
+    cursor: pointer;
+}
+
+.menu-toggle {
+    display: none;
+    /* Hide the menu toggle button by default */
+    font-size: 30px;
+    color: #fff;
+    cursor: pointer;
+}
+
+.logo {
+    font-size: 24px;
+    color: #00ffcc;
+    text-transform: uppercase;
+}
+
+.nav-links {
+    display: flex;
+    list-style: none;
+}
+
+.nav-links li {
+    margin-left: 20px;
+}
+
+.nav-links a {
+    color: #fff;
+    text-decoration: none;
+    font-size: 18px;
+    transition: color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.nav-links a:hover {
+    color: #00ffcc;
+    box-shadow: 0 4px 0 #00ffcc;
+}
+
+/* Projects Section */
+.projects-list {
+    list-style: none;
+    padding: 0;
+    width: 100%;
+    max-width: 1200px;
+    margin-top: 100px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+    gap: 20px;
+}
+
+/* Project Card */
+.project {
+    background: rgba(13, 13, 13, 0.9);
+    border: 2px solid #00ffcc;
+    border-radius: 12px;
+    width: 300px;
+    padding: 20px;
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+    transition: transform 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease;
+    cursor: pointer;
+}
+
+.project:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 0 20px #00ffcc, 0 0 40px #00ffcc;
+    border-color: #00ccff;
+}
+
+.project h2 a {
+    color: #00ffcc;
+    font-size: 1.4rem;
+    text-decoration: none;
+    display: inline-block;
+    margin-bottom: 10px;
+    transition: color 0.3s ease;
+}
+
+.project h2 a:hover {
+    color: #00ccff;
+}
+
+.project img {
+    width: 100%;
+    height: auto;
+    border-radius: 8px;
+    margin-top: 15px;
+    transition: opacity 0.3s ease, transform 0.3s ease;
+}
+
+.project img:hover {
+    opacity: 0.9;
+    transform: scale(1.05);
+}
+
+/* Glowing Border Animation */
+.project::before {
+    content: '';
+    position: absolute;
+    top: -2px;
+    left: -2px;
+    right: -2px;
+    bottom: -2px;
+    border-radius: 12px;
+    background: linear-gradient(45deg, #00ffcc, #00ccff, #ff0066);
+    z-index: -1;
+    transition: opacity 0.3s ease;
+    opacity: 0;
+}
+
+.project:hover::before {
+    opacity: 0.3;
+}
+
+/* Section Header */
+h2 {
+    font-size: 2.5rem;
+    color: #00ffcc;
+    text-align: center;
+    margin: 80px 0 40px;
+    text-shadow: 0 0 10px #00ffcc, 0 0 20px #00ffcc;
+}
+
+/* Footer */
+footer {
+    padding: 20px;
+    text-align: center;
+    background-color: rgba(0, 0, 0, 0.8);
+    width: 100%;
+}
+
+footer p {
+    font-size: 14px;
+    color: #fff;
+}
+
+/* Responsive Styles */
+
+/* Tablet View */
+@media (max-width: 1024px) {
+    .projects-list {
+        gap: 15px;
+    }
+
+    .project {
+        width: 80%;
+    }
+
+    h2 {
+        font-size: 2rem;
+    }
+}
+
+/* Mobile View */
+@media (max-width: 768px) {
+    .projects-list {
+        flex-direction: column;
+        align-items: center;
+        gap: 10px;
+    }
+
+    .project {
+        width: 90%;
+    }
+
+    h2 {
+        font-size: 1.8rem;
+    }
+
+    .menu-toggle {
+            display: block;
+            /* Show the menu toggle button on mobile */
+        }
+    
+    .navbar.active .nav-links {
+            right: 0;
+            /* Show navbar when active */
+        }
+
+    .nav-links {
+            flex-direction: column;
+            position: absolute;
+            top: 60px;
+            /* Adjust based on your navbar height */
+            right: -100%;
+            background: rgba(0, 0, 0, 0.9);
+            transition: right 0.3s ease;
+        }
+
+    .nav-links li {
+            margin: 15px 0;
+        }
+            
+    .nav-links a {
+        font-size: 20px;
+        }
+}
